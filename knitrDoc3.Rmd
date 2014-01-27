@@ -1,0 +1,40 @@
+# Making Tables
+
+## The Code
+
+``` {r fitmodel}
+library(datasets)
+data(airquality)
+fit <- lm(Ozone ~ Wind + Temp + Solar.R, data=airquality)
+plot(fit)
+```
+
+Here is the table:
+
+``` {r showtable, results="asis"}
+library(xtable)
+xt <- xtable(summary(fit))
+print(xt, type="html")
+```
+
+###  you like? Here are more common options...
+#### Output:
+    results: "asis", "hide"
+    echo: TRUE, FALSE
+#### Figures:
+    fig.height: numeric
+    fig.width; numeric
+
+<br />
+## Here we add inline text as in emails:
+> This is the first level
+>
+>> This is nested...
+>
+> Back to the first level
+
+
+
+
+
+

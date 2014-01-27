@@ -1,0 +1,30 @@
+# What time is it??
+
+## Let's see...
+
+```{r computetime, echo=F}
+time <- format(Sys.time(), "%a %b %d %X %Y")
+rand <- rnorm(1)
+```
+
+The current time is `r time`.  My favorite number is `r rand`.
+
+## More...
+
+First, simulate the data...
+```{r simulatedata, echo=TRUE}
+x <- rnorm(100); y <- x + rnorm(100, sd=0.5)
+```
+
+Next, a scatterplot...
+```{r scatterplot, fig.height=4}
+par(mar=c(5,4,1,1), las=1)
+plot(x,y, main="Simulated Data", pch=21, col="blue", bg="yellow")
+lines(stats::lowess(y~x))
+```
+
+### ok, so...
+
+
+
+
